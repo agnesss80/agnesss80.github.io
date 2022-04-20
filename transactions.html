@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="sv-se">
+
+<head>
+    <meta charset="utf-8">
+    <title>Transaktioner</title>
+    <meta name="description" content="Personlig budgetkalkyl för Magnus">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-starturl" content="/">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="silver">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="darkgray">
+
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="Images/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="Images/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="CascadingStyleSheets/styles.css">
+</head>
+
+<body>
+    <script type="text/javascript">
+        var submitted=false;
+    </script>
+    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScKFr3p_jsJOx2JsFPMF6wjTX5K9ajomEqf8OZlFo_1iC1jaw/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+	<header>
+        <h1>Transaktioner</h1>
+    </header>
+    <main>
+        <article>
+            <section>
+                <h2><label for="date">Datum</label></h2>
+                <input type="date" id="date" name="entry.1196440539" required placeholder="yyyy-mm-dd">
+            </section>
+        </article>
+        <article>
+            <section>
+                <h2><label for="sum">Summa</label></h2>
+                <input type="text" id="sum" name="entry.1166763405" required placeholder="belopp">
+            </section>
+        </article>
+        <article>
+            <section>
+                <h2><label for="description">Beskrivning</label></h2>
+                <input type="text" id="description" name="entry.1165408254" required placeholder="beskrivning">
+            </section>
+        </article>
+        <article>
+            <section>
+                <h2><label for="category">Kategori</label></h2>
+                <select id="category" name="entry.1682275095" required>
+						<option value="" selected disabled hidden>välj</option>
+						<optgroup label="Boende">
+							<option value="Hyra">Hyra</option>
+							<option value="Bolån">Bolån</option>
+							<option value="El">El</option>
+							<option value="Hemförsäkring">Hemförsäkring</option>
+						</optgroup>
+						<optgroup label="Transport">
+							<option value="Bil">Bil</option>
+							<option value="Kollektivresor">Kollektivresor</option>
+						</optgroup>
+						<optgroup label="Allm&auml;nna omkostnader">
+							<option value="Försäkringar">Försäkringar</option>
+							<option value="Fackförbund">Fackförbund</option>
+							<option value="A-kassa">A-kassa</option>
+							<option value="Återbetalning lån">Återbetalning lån</option>
+							<option value="Abonnemang">Abonnemang</option>
+							<option value="Bankavgifter">Bankavgifter</option>
+							<option value="Livsmedel">Livsmedel</option>
+							<option value="Barnspar">Barnspar</option>
+							<option value="Övrigt">Övrigt</option>
+						</optgroup>
+						<optgroup label="R&ouml;rliga kostnader">
+							<option value="Snacks & fika">Snacks & fika</option>
+							<option value="Äta ute">Äta ute</option>
+							<option value="Hygien- & skönhetsartiklar">Hygien- & skönhetsartiklar</option>
+							<option value="Förbrukningsprodukter">Förbrukningsprodukter</option>
+							<option value="Kläder & skor">Kläder & skor</option>
+							<option value="Hemutrustning">Hemutrustning</option>
+							<option value="Hälsovård">Hälsovård</option>
+							<option value="Fritid & nöjen">Fritid & nöjen</option>
+							<option value="Barn">Barn</option>
+							<option value="Husdjur">Husdjur</option>
+							<option value="Övriga rörliga kostnader">Övriga rörliga kostnader</option>
+						</optgroup>
+						<optgroup label="Sparande">
+							<option value="Avanza">Månadssparande</option>
+							<option value="Lysa">Pensionssparande</option>
+						</optgroup>
+						<optgroup label="Inkomster">
+							<option value="Lön">Lön</option>
+							<option value="Barnbidrag">Barnbidrag</option>
+							<option value="Bostadsbidrag">Bostadsbidrag</option>
+							<option value="Underhåll">Underhåll</option>
+							<option value="Övriga inkomster">Övriga inkomster</option>
+						</optgroup>
+					</select>
+            </section>
+        </article>
+    </main>
+    <nav class="sub-nav">
+		<button type="submit">skicka
+		</button>
+	</nav>
+	<nav>
+		<button class="active" type="button" onclick="location.href='transactions.html'">transaktion
+		</button>
+		<button type="button" onclick="location.href='latest.html'">senaste
+		</button>
+		<button type="button" onclick="location.href='distribution.html'">fördelning
+		</button>
+    </nav>
+	</form>
+    <iframe name="hidden_iframe" id="hidden_iframe" title="hidden iframe" style="display:none;" onload="if(submitted) {window.location='thanks.html';}">
+	</iframe>
+    <script>
+        if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('serviceWorker.js', {scope: './'})
+				.then(() => {console.log('service worker installed')})
+				.catch(err => {console.error('ServiceWorker registration failed: ', err)});}
+    </script>
+</body>
+
+</html>

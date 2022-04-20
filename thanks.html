@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="sv-se">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tack :)</title>
+    <meta name="description" content="Personlig budgetkalkyl för Magnus">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="msapplication-starturl" content="/">
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="silver">
+	<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="darkgray">
+
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="Images/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="Images/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="CascadingStyleSheets/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Tack f&ouml;r en ber&ouml;mlig insats</h1>
+    </header>
+    <main>
+        <article>
+            <section>
+                <p>dina uppgifter &auml;r sparade</p>
+                <br>
+            </section>
+        </article>
+    </main>
+	<nav>
+		<button type="button" onclick="location.href='transactions.html'">transaktion
+		</button>
+		<button type="button" onclick="location.href='latest.html'">senaste
+		</button>
+		<button type="button" onclick="location.href='distribution.html'">fördelning
+		</button>
+    </nav>
+	<script>
+        if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('serviceWorker.js', {scope: './'})
+				.then(() => {console.log('service worker installed')})
+				.catch(err => {console.error('ServiceWorker registration failed: ', err)});}
+    </script>
+</body>
+
+</html>
